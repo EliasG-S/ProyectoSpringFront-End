@@ -1,0 +1,68 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Empresas-actualizacion</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+	<body>
+		<div class="container-fluid">
+			<form method="post" th:action="@{/empresa/update}" th:object="${actEmpresa}">
+				
+				<h1 class="pull-left">Actualizacion de Empresas</h1>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<div class="form-group">
+					<label for="idVenta">Id Empresa</label>
+					<input type="text" class="form-control" id="id" aria-describedby="emailHelp" placeholder="Ingresar identificador de la empresa a actualizar" th:field="*{idEmpresa}"/>				
+				</div>
+				
+				<div class="form-group">
+					<label for="nombreCliente">Nombre de la empresa</label>
+					<input type="text" class="form-control" id="nombreem" aria-describedby="emailHelp" placeholder="Ingresar nombre de la empresa" th:field="*{nomEmpresa}"/>				
+				</div>
+				
+				<div class="form-group">
+					<label for="fechaVenta">Area a trabajar</label>
+					<input type="text" class="form-control" id="area" aria-describedby="emailHelp" placeholder="Ingresar el area de trbajo" th:field="*{area}"/>				
+				</div>
+				
+				<div class="form-group">
+					<label for="cantidadVenta" >Cargo</label>
+					<input type="text" class="form-control" id="cargo" aria-describedby="emailHelp" placeholder="Ingresar el cargo de aplicacion" th:field="*{cargo}"/>
+				</div>
+				
+				<div class="form-group">
+					<label for="tipoComprobante" >Departamento</label>
+					<input type="text" class="form-control" id="ciudad" aria-describedby="emailHelp" placeholder="Departamento donde reside" th:field="*{ciudad}"/>
+				</div>
+				
+				<div class="form-group">
+					<label for="totalVenta" >Contacto</label>
+					<input type="text" class="form-control" id="contact" aria-describedby="emailHelp" placeholder="Ingresar telefono o correo" th:field="*{contacto}"/>
+				</div>
+				
+				<div class="form-group">
+					<label for="estadoVenta" >Pais</label>
+					<input type="text" class="form-control" id="pais" aria-describedby="emailHelp" placeholder="Ingresar el pais " th:field="*{pais}"/>
+				</div>
+				
+				<div class="form-group">
+					<label for="estadoVenta" >Timpo</label>
+					<input type="text" class="form-control" id="timpo" aria-describedby="emailHelp" placeholder="Ingresar si es de medio tiempo o tiempo completo" th:field="*{tiempo}"/>
+				</div>
+				
+				<button type="submit" class="btn btn-primary">Actualizar</button>	
+			
+			</form>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,65 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Cuenta</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+	<body>
+		<div class="container-fluid">
+			<form method="post" th:action="@{/empresa}" th:object="${creaEmpresa}">
+				
+				<h1 class="pull-left">Creacion de empresa</h1>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<div class="form-group">
+					<label for="nombreCuenta">Nombre de la empresa</label>
+					<input type="text" class="form-control" id="nombreEm" aria-describedby="emailHelp" placeholder="Ingresar nombre de la Empresa" th:field="*{nomEmpresa}"/>				
+				</div>
+				
+				<div class="form-group">
+					<label for="tipoCuenta">Area</label>
+					<input type="text" class="form-control" id="area" aria-describedby="emailHelp" placeholder="Area" th:field="*{area}"/>				
+				</div>
+				
+				<div class="form-group">
+					<label for="descripcionCuenta" >Cargo</label>
+					<input type="text" class="form-control" id="cargo" aria-describedby="emailHelp" placeholder="Cargo" th:field="*{cargo}"/>
+				</div>
+				
+				<div class="form-group">
+					<label for="fechaCreacion" >Departamento</label>
+					<input type="text" class="form-control" id="ciu" aria-describedby="emailHelp" placeholder="Departamento" th:field="*{ciudad}"/>
+				</div>
+				
+				<div class="form-group">
+					<label for="contrasenaCuenta" >Contacto</label>
+					<input type="text" class="form-control" id="contac" aria-describedby="emailHelp" placeholder="Correo electronico o telefono" th:field="*{contacto}"/>
+				</div>
+				
+					
+				<div class="form-group">
+					<label for="contrasenaCuenta" >Pais</label>
+					<input type="text" class="form-control" id="pais" aria-describedby="emailHelp" placeholder="Pais" th:field="*{pais}"/>
+				</div>
+				
+					
+				<div class="form-group">
+					<label for="contrasenaCuenta" >Tiempo</label>
+					<input type="text" class="form-control" id="tiemp" aria-describedby="emailHelp" placeholder="Tiempo-completo o Medio-tiempo " th:field="*{tiempo}"/>
+				</div>
+				
+				<button type="submit" class="btn btn-primary">Agregar</button>				
+
+			</form>
+		</div>
+	</body>
+</html>

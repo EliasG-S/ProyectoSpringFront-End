@@ -1,0 +1,92 @@
+  		<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Empresas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+	<body>
+  		<div class="col-md-10" id="content-wrapper">
+  			<div class="row">
+  				<div class="col-lg-12">
+  					<div class="clearfix">
+  							
+  						<h1 class="pull-left">Listado de las empresas</h1>
+  							<br/>
+  							<br/>
+  							<br/>
+  							<div class="pull-right top-page-ui">
+  								<a href="/empresa/crear" th:href="@{'/empresa/crear'}" class="btn btn-primary pull-right">
+  									<i class="glyphicon glyphicon-plus">Agregarempresa</i>
+  								</a>		
+  							</div>
+  							
+  							<div>
+  								<a href="/empresa/actualizar" th:href="@{'/empresa/actualizar'}" class="btn btn-primary pull-right">
+					 				<i class="glyphicon glyphicon-plus"> Actualizarempresa </i>
+					 			</a>
+  							</div>
+  					</div>
+  					
+  					<div class="row">
+  						<div class="col-lg-12">
+  							<div class="main-box clearfix">
+  								<div class="table user-responsive">
+  									<table class="table user-list">
+  										
+  										<thead>	
+  											<tr>
+  												<th><span>id Empresa</span></th>
+  												<th><span>Nombre Empresa</span></th>
+  												<th><span>Area</span></th>
+  												<th><span>Cargo</span></th>
+  												<th><span>Ciudad</span></th>
+  												<th><span>Contacto</span></th>
+  												<th><span>Pais</span></th>
+  												<th><span>Tiempo</span></th>
+  											</tr>
+  										</thead>
+  										
+  										<tbody th:each="empresa :${empresas}">
+  											<tr>
+  												<td th:text="${empresa.idEmpresa}"></td>
+  												<td th:text="${empresa.nomEmpresa}"></td>
+  												<td th:text="${empresa.area}"></td>
+												<td th:text="${empresa.cargo}"></td>
+												<td th:text="${empresa.ciudad}"></td>
+												<td th:text="${empresa.contacto}"></td>
+												<td th:text="${empresa.pais}"></td>
+												<td th:text="${empresa.tiempo}"></td>
+												
+												<td>
+													<form method="post" action="/empresa/delete/${empresa.idEmpresa}" th:action="@{'/empresa/delete/' + ${empresa.idEmpresa}}">
+													<input type="hidden" name="empresaId" th:value="${empresa.idEmpresa}"/>
+													<input type="hidden" name="_method" value="Borrar"/>
+													<button type="submit" name="deleteEpresa" class="glyphicon glypicon-trash">Borrar</button>
+													</form>
+												</td>
+  											</tr>
+  										</tbody>
+  									</table>
+  								</div>
+  							</div>
+  						</div>
+  					</div>
+  				</div>
+  			</div>
+  		</div>
+  	</body>
+</html>
+
+  		
+  		
+  		
+  		
+  		
+  		
+  		
